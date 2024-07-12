@@ -19,9 +19,9 @@ The solution I discovered was largely inspired by this [article](https://buildui
 Additionally, I experimented with the recently enhanced [View Transition API](https://developer.chrome.com/docs/web-platform/view-transitions) that has been improved by the Chrome team.
 
 ## Future improvements 
-- Add internationalisation support i18n via ['next-intl'](https://github.com/amannn/next-intl)
-- Increase the test coverage
-- Improve support for screen readers 
+- a11y: Add internationalisation support i18n via ['next-intl'](https://github.com/amannn/next-intl)
+- Testing: Increase the test coverage
+- a11y: Improve support for screen readers 
 
 
 ### Page  `/`
