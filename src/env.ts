@@ -4,6 +4,9 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     API_BIKE_STATIONS: z.string().url(),
+    API_PARKING_STATIONS: z.string().url(),
+    PARKING_AREA: z.string(),
+    URLS_BIKE_STATIONS: z.string(),
   },
  
   /**
