@@ -9,7 +9,15 @@ This project has been developed as part of a recrutiment process. The main chall
 - [shadcn/ui](https://ui.shadcn.com/): Beautifully designed components for fast development for projects like this. At its core it has Radix for most of the components.
 - [@t3-oss/env-core](https://env.t3.gg/) : Framework agnostic validation for type-safe environment variables.
 
-## Pages
+## Page  `/`
+![image](https://github.com/user-attachments/assets/9d43bdfc-276e-4dff-b524-0cd3f1842a9e)
+
+## Page  `/bikes`
+
+## Page  `/parkings`
+
+## Page  `/parkings/:id`
+
 
 
 ### Download locally and run
