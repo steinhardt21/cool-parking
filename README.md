@@ -12,7 +12,7 @@ This project was developed as part of a recruitment process, which involved crea
 - [@t3-oss/env-core](https://env.t3.gg/) : Framework agnostic validation for type-safe environment variables.
 - [next-view-transitions](https://github.com/shuding/next-view-transitions): Use View Transitions API in Next.js App Router.
 
-## Technical challengies
+## Technical challenges 
 My goal for this project was to develop everything using RSC. The primary challenge was finding a way to update the data periodically on the client side by sending updates.
 The solution I discovered was largely inspired by this [article](https://buildui.com/recipes/refresh-react-server-component-on-focus) by [BuildUI](https://buildui.com/), which suggests using a combination of server actions and client-side components.
 
