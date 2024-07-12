@@ -2,6 +2,8 @@
 ## Cool Parking
 This project was developed as part of a recruitment process, which involved creating three web pages that consume real data from an open API regarding parking services and bike-sharing in the Belgian city of Ghent.
 
+(Short presentation of the project done via Loom)[https://www.loom.com/share/5d2107156ec645c5b96cbb2fdb09cf49?sid=e1deabc6-92d4-4c05-929f-278b85e54746]
+
 ### Relevant piece of software used in the development
 - [NextJS](https://nextjs.org/): in particular with RSC
 - [Tailwind](https://tailwindcss.com)
