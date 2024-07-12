@@ -18,6 +18,12 @@ The solution I discovered was largely inspired by this [article](https://buildui
 
 Additionally, I experimented with the recently enhanced [View Transition API](https://developer.chrome.com/docs/web-platform/view-transitions) that has been improved by the Chrome team.
 
+## Future improvements 
+- Add internationalisation support i18n via ['next-intl'](https://github.com/amannn/next-intl)
+- Increase the test coverage
+- Improve support for screen readers 
+
+
 ### Page  `/`
 ![image](https://github.com/user-attachments/assets/9d43bdfc-276e-4dff-b524-0cd3f1842a9e)
 
