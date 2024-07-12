@@ -1,0 +1,66 @@
+"use client"
+
+import * as React from "react"
+import Link from "next/link"
+import { useSelectedLayoutSegment } from "next/navigation"
+import { X, CarTaxiFront } from 'lucide-react'
+
+import { MainNavItem } from "@/types"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import { MobileNav } from "./mobile-nav"
+
+interface MainNavProps {
+  items?: MainNavItem[]
+  children?: React.ReactNode
+}
+
+export function MainNav({ items, children }: MainNavProps) {
+  const segment = useSelectedLayoutSegment()
+  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
+
+  return (
+    <div className="flex gap-6 md:gap-10">
+      <Link href="/" className="hidden items-center space-x-2 md:flex" aria-label="Home">
+        <CarTaxiFront />
+        <span className="hidden font-bold sm:inline-block">
+          {siteConfig.name}
+        </span>
+      </Link>
+      {items?.length ? (
+        <nav role="navigation" className="hidden gap-6 md:flex" aria-label="Main navigation">
+          {items?.map((item, index) => (
+            <Link
+              prefetch
+              aria-label={`See availability of ${item.title}`}
+              key={index}
+              href={item.disabled ? "#" : item.href}
+              className={cn(
+                "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+                item.href.startsWith(`/${segment}`)
+                  ? "text-foreground"
+                  : "text-foreground/60",
+                item.disabled && "cursor-not-allowed opacity-80"
+              )}
+            >
+              {item.title}
+            </Link>
+          ))}
+        </nav>
+      ) : null}
+      <button
+        className="flex items-center space-x-2 md:hidden"
+        onClick={() => setShowMobileMenu(!showMobileMenu)}
+        aria-expanded={showMobileMenu}
+        aria-controls="mobileMenu"
+        aria-label="Toggle mobile menu"
+      >
+        {showMobileMenu ? <X /> : <CarTaxiFront />}
+        <span className="font-bold">Menu</span>
+      </button>
+      {showMobileMenu && items && (
+        <MobileNav items={items}>{children}</MobileNav>
+      )}
+    </div>
+  )
+}
