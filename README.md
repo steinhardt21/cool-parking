@@ -13,10 +13,13 @@ This project has been developed as part of a recrutiment process. The main chall
 ![image](https://github.com/user-attachments/assets/9d43bdfc-276e-4dff-b524-0cd3f1842a9e)
 
 ## Page  `/bikes`
+![image](https://github.com/user-attachments/assets/e24893b8-5a87-44d5-9e20-2ef291c3d2a2)
 
 ## Page  `/parkings`
+![image](https://github.com/user-attachments/assets/42e0cdc9-8b6d-4e29-887b-8f956ea92ce0)
 
 ## Page  `/parkings/:id`
+![image](https://github.com/user-attachments/assets/aacd57c0-3c8d-45a2-8b01-6f24e7de8a7f)
 
 
 
