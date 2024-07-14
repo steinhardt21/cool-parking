@@ -9,6 +9,10 @@ export const landingConfig: LandingConfig = {
     {
       title: 'Parkings',
       href: '/parkings'
-    }
+    },
+    {
+      title: 'Gallery',
+      href: '/gallery'
+    },
   ]
 }
