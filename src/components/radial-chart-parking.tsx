@@ -20,7 +20,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function RadialChart({ availableSpots, totalSpots }: {availableSpots: number, totalSpots: number }) {
+export function RadialChart({ availableSpots, totalSpots, viewTransitionName }: {availableSpots: number, totalSpots: number, viewTransitionName?: string}) {
   const endAngle = 360 * (availableSpots / totalSpots)
   const chartData = [
     { spots: availableSpots, fill: "var(--color-available)" },
@@ -28,6 +28,7 @@ export function RadialChart({ availableSpots, totalSpots }: {availableSpots: num
   
   return (
     <ChartContainer
+      style={{ viewTransitionName: `chart-${viewTransitionName}` }}
       config={chartConfig}
       className="mx-auto aspect-square max-h-[250px]"
     >

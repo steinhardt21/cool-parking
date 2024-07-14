@@ -4,6 +4,7 @@ import { Shell } from '@/components/shell'
 import { buttonVariants } from '@/components/ui/button'
 import { cn, getGoogleMapsLink } from '@/lib/utils'
 import { CopyButton } from '@/components/copy-button'
+import { RadialChart } from '@/components/radial-chart-parking'
 
 export type ParkingPageProps = {
   params: { id: string },
@@ -47,24 +48,30 @@ export default async function ParkingPage(props: ParkingPageProps) {
       >
         {name}
       </h1>
-      <section className='flex flex-col gap-3' aria-label="Parking details">
-        <div aria-labelledby="descriptionHeading">
-          <h2 className='font-heading text-lg'>Description</h2>
-          <p>{description}</p>
-        </div>
-        <div>
-          <h2 className='font-heading text-lg'>Category</h2>
-          <p>{categorie}</p>
-        </div>
-        <div>
-          <h2 className='font-heading text-lg'>Parking spot availability</h2>
-          <ul>
-            <li>Total spots: {totalcapacity}</li>
-            <li>Available spots: {availablecapacity}</li>
-            <li>Taken spots: {takenSpotsPercentage}%</li>
-          </ul>
-        </div>
-      </section>
+      <div className='flex flex-col sm:flex-row w-full'>
+        <section className='flex flex-col gap-3' aria-label="Parking details">
+          <div aria-labelledby="descriptionHeading">
+            <h2 className='font-heading text-lg'>Description</h2>
+            <p>{description}</p>
+          </div>
+          <div>
+            <h2 className='font-heading text-lg'>Category</h2>
+            <p>{categorie}</p>
+          </div>
+          <div>
+            <h2 className='font-heading text-lg'>Parking spot availability</h2>
+            <ul>
+              <li>Total spots: {totalcapacity}</li>
+              <li>Available spots: {availablecapacity}</li>
+              <li>Taken spots: {takenSpotsPercentage}%</li>
+            </ul>
+          </div>
+        </section>
+        <section className='w-full'>
+          <RadialChart availableSpots={availablecapacity} totalSpots={totalcapacity} viewTransitionName={id} />
+        </section>
+      </div>
+      
       <div className='flex flex-col sm:flex-row gap-3'>
         <Link
           href={googleMapsLink}

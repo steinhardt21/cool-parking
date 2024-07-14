@@ -24,7 +24,7 @@ export function CardParkingDetails(props: Parking) {
       </CardHeader>
       <CardContent>
         <div tabIndex={0} role="img" aria-label={availableSpotsLabel}>
-          <RadialChart availableSpots={availablecapacity} totalSpots={totalcapacity} />
+          <RadialChart availableSpots={availablecapacity} totalSpots={totalcapacity} viewTransitionName={convertSpacesToDashes(name)} />
         </div>
         <Link prefetch href={`/parkings/${convertSpacesToDashes(name)}`} aria-label={`See ${name} parking details`}>See parking details →</Link>
       </CardContent>
