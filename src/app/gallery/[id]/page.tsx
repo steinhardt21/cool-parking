@@ -2,6 +2,10 @@ import Image from "next/image";
 import { Shell } from "@/components/shell";
 import imagesDemo from "@/assets/images.json";
 
+export async function generateStaticParams() {
+  return imagesDemo.demo.map(image => ({ params: { id: image.name }}))
+}
+
 type ParkingsGalleryProps = {
   params: { id: string },
 }
