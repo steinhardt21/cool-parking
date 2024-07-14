@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 import { getParkingDetails } from '@/fetch-data/data-parking'
 import { Shell } from '@/components/shell'
 import { buttonVariants } from '@/components/ui/button'
@@ -23,7 +22,7 @@ export default async function ParkingPage(props: ParkingPageProps) {
   if(!data.data) {
     return (
       <Shell>
-        <h1 className="font-heading text-3xl md:text-4xl">No data available!</h1>
+        <h1 className="font-heading text-3xl md:text-4xl">No data available at the moment!</h1>
       </Shell>
     )
   }
@@ -42,7 +41,12 @@ export default async function ParkingPage(props: ParkingPageProps) {
 
   return (
     <Shell>
-      <h1 className="font-heading text-3xl md:text-4xl">{name}</h1>
+      <h1 
+        className="font-heading text-3xl md:text- w-fit"
+        style={{ viewTransitionName: `title-${id}` }}
+      >
+        {name}
+      </h1>
       <section className='flex flex-col gap-3' aria-label="Parking details">
         <div aria-labelledby="descriptionHeading">
           <h2 className='font-heading text-lg'>Description</h2>

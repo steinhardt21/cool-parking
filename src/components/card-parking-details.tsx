@@ -12,7 +12,15 @@ export function CardParkingDetails(props: Parking) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle role="heading" aria-label={`${name} parking details`} tabIndex={0} className="font-light text-lg demo">{name}</CardTitle>
+        <CardTitle 
+          role="heading" 
+          style={{ viewTransitionName: `title-${convertSpacesToDashes(name)}`}}
+          aria-label={`${name} parking details`} 
+          tabIndex={0} 
+          className="font-light text-lg w-fit"
+        >
+          {name}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <div tabIndex={0} role="img" aria-label={availableSpotsLabel}>
