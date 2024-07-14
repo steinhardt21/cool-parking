@@ -36,6 +36,14 @@ Additionally, I experimented with the recently enhanced [View Transition API](ht
 ### Page  `/parkings/:id`
 ![image](https://github.com/user-attachments/assets/aacd57c0-3c8d-45a2-8b01-6f24e7de8a7f)
 
+### Page  `/gallery`
+![image](https://github.com/user-attachments/assets/aacd57c0-3c8d-45a2-8b01-6f24e7de8a7f)
+
+
+### Page  `/gallery/:id`
+![image](https://github.com/user-attachments/assets/aacd57c0-3c8d-45a2-8b01-6f24e7de8a7f)
+
+
 ## Download locally and run
 After you set the .env then run the development server:
 
