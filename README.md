@@ -37,11 +37,10 @@ Additionally, I experimented with the recently enhanced [View Transition API](ht
 ![image](https://github.com/user-attachments/assets/aacd57c0-3c8d-45a2-8b01-6f24e7de8a7f)
 
 ### Page  `/gallery`
-![image](https://github.com/user-attachments/assets/aacd57c0-3c8d-45a2-8b01-6f24e7de8a7f)
-
+![image](https://github.com/user-attachments/assets/2cb32669-81aa-4a97-99f7-13047d5e4f73)
 
 ### Page  `/gallery/:id`
-![image](https://github.com/user-attachments/assets/aacd57c0-3c8d-45a2-8b01-6f24e7de8a7f)
+![image](https://github.com/user-attachments/assets/e5d36edc-fc82-4b81-8173-cfde6c4c50c8)
 
 
 ## Download locally and run
