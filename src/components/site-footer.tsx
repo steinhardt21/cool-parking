@@ -8,6 +8,7 @@ export function SiteFooter() {
           <p className="text-center text-sm leading-loose md:text-left">
             Built by{" "}
             <a
+              // FIXME: this is not a valid href
               href={'https://'}
               target="_blank"
               rel="noreferrer"

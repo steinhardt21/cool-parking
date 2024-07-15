@@ -15,6 +15,7 @@ export default function ParkingsGalleryPage(props: ParkingsGalleryProps) {
     <Shell>
       <h1 tabIndex={0} className="font-heading text-3xl md:text-4xl">{details.title}</h1>
       <div className='flex flex-col sm:flex-row w-full'>
+      {/* FIXME: no need to include an aria-label & aria-labelledby, a section already looks for an underlying heading tag */}
         <section className='flex flex-col gap-3' aria-label="Parking details">
           <div aria-labelledby="descriptionHeading">
             <h2 className='font-heading text-lg'>Description</h2>

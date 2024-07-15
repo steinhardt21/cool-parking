@@ -21,6 +21,7 @@ export default async function BikesPage() {
         {urls.map(station => 
           <ErrorBoundary key={station.resource} fallback={CardBikeStation.Error()}>
             <Suspense fallback={CardBikeStation.Skeleton()}> 
+              {/* FIXME: Do the data calls happen in parallel here? */}
               <CardBikeStation station={station} />
             </Suspense>
           </ErrorBoundary>

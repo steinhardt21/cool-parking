@@ -1,3 +1,4 @@
+// FIXME: this import isn't used
 import Image from "next/image";
 
 export default function Home() {

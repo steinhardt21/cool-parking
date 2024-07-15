@@ -32,6 +32,7 @@ describe('getBikesAvailableFromStation', () => {
       ]
     };
 
+    // FIXME: instead of mocking fetch, have a look at the 'msw' library 
     global.fetch = vi.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve(mockResponse)

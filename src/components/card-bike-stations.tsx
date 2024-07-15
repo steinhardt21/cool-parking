@@ -1,6 +1,5 @@
-
 import { Tracker, type TrackerBlockProps } from "./tracker-bikes";
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card"
+import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { getBikesAvailableFromStation } from "@/fetch-data/data-bikes";
 import { revalidateStation } from "@/lib/actions";
 import { RefreshCache } from "./refresh-cache";
@@ -9,27 +8,22 @@ import { Skeleton } from "./ui/skeleton";
 
 type CardBikeStationProps = {
   station: {
-    name: string,
-    resource: string
-  }
-}
+    name: string;
+    resource: string;
+  };
+};
 
 export async function CardBikeStation({ station }: CardBikeStationProps) {
-  const data = await getBikesAvailableFromStation(station.resource)
+  const data = await getBikesAvailableFromStation(station.resource);
 
-  if('error' in data) {
-    throw new Error(data.error)
+  if ("error" in data) {
+    throw new Error(data.error);
   }
 
-  const {
-    last_seen,
-    name,
-    bikes_in_use,
-    bikes_available,
-  } = data.data
+  const { last_seen, name, bikes_in_use, bikes_available } = data.data;
 
-  const revalidateStationAction = revalidateStation.bind(null, station.resource, last_seen)
-  const dataTracker = getBikesDataTracker(bikes_available, bikes_in_use)
+  const revalidateStationAction = revalidateStation.bind(null, station.resource, last_seen);
+  const dataTracker = getBikesDataTracker(bikes_available, bikes_in_use);
 
   return (
     <>
@@ -54,16 +48,26 @@ export async function CardBikeStation({ station }: CardBikeStationProps) {
         </CardContent>
       </Card>
     </>
-  )
+  );
 }
 
-function getBikesDataTracker(availableBikes: number, unavailableBikes: number): TrackerBlockProps[] {
-  const availableBikesData = Array.from({ length: availableBikes }, () => ({ color: "bg-emerald-600", tooltip: "Available Bike" }))
-  const unavailableBikesData = Array.from({ length: unavailableBikes }, () => ({ color: "bg-red-600", tooltip: "Bike not available" }))
+function getBikesDataTracker(
+  availableBikes: number,
+  unavailableBikes: number
+): TrackerBlockProps[] {
+  const availableBikesData = Array.from({ length: availableBikes }, () => ({
+    color: "bg-emerald-600",
+    tooltip: "Available Bike",
+  }));
+  const unavailableBikesData = Array.from({ length: unavailableBikes }, () => ({
+    color: "bg-red-600",
+    tooltip: "Bike not available",
+  }));
 
-  return [...availableBikesData, ...unavailableBikesData]
+  return [...availableBikesData, ...unavailableBikesData];
 }
 
+// FIXME: Nice use of compound components here
 CardBikeStation.Skeleton = function CardBikeStationSkeleton() {
   return (
     <div className="p-8 border rounded-md">
@@ -72,8 +76,8 @@ CardBikeStation.Skeleton = function CardBikeStationSkeleton() {
         <Skeleton className="h-4 w-4/5" />
       </div>
     </div>
-  )
-}
+  );
+};
 
 CardBikeStation.Error = function CardBikeStationError() {
   return (
@@ -82,5 +86,5 @@ CardBikeStation.Error = function CardBikeStationError() {
         <p className="text-red-700">Error in downloading the data from the station!</p>
       </div>
     </div>
-  )
-}
+  );
+};

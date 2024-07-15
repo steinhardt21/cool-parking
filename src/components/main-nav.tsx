@@ -1,33 +1,32 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { useSelectedLayoutSegment } from "next/navigation"
-import { X, CarTaxiFront } from 'lucide-react'
+import * as React from "react";
+import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { X, CarTaxiFront } from "lucide-react";
 
-import { MainNavItem } from "@/types"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { MobileNav } from "./mobile-nav"
+import { MainNavItem } from "@/types";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { MobileNav } from "./mobile-nav";
 
 interface MainNavProps {
-  items?: MainNavItem[]
-  children?: React.ReactNode
+  items?: MainNavItem[];
+  children?: React.ReactNode;
 }
 
 export function MainNav({ items, children }: MainNavProps) {
-  const segment = useSelectedLayoutSegment()
-  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
+  const segment = useSelectedLayoutSegment();
+  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="hidden items-center space-x-2 md:flex" aria-label="Home">
         <CarTaxiFront />
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
+        <span className="hidden font-bold sm:inline-block">{siteConfig.name}</span>
       </Link>
       {items?.length ? (
+        // FIXME: the nav element already has a implicit navigation role
         <nav role="navigation" className="hidden gap-6 md:flex" aria-label="Main navigation">
           {items?.map((item, index) => (
             <Link
@@ -37,9 +36,7 @@ export function MainNav({ items, children }: MainNavProps) {
               href={item.disabled ? "#" : item.href}
               className={cn(
                 "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
-                item.href.startsWith(`/${segment}`)
-                  ? "text-foreground"
-                  : "text-foreground/60",
+                item.href.startsWith(`/${segment}`) ? "text-foreground" : "text-foreground/60",
                 item.disabled && "cursor-not-allowed opacity-80"
               )}
             >
@@ -55,12 +52,11 @@ export function MainNav({ items, children }: MainNavProps) {
         aria-controls="mobileMenu"
         aria-label="Toggle mobile menu"
       >
+        {/* FIXME: https://benadam.me/thoughts/react-svg-sprites/ */}
         {showMobileMenu ? <X /> : <CarTaxiFront />}
         <span className="font-bold">Menu</span>
       </button>
-      {showMobileMenu && items && (
-        <MobileNav items={items}>{children}</MobileNav>
-      )}
+      {showMobileMenu && items && <MobileNav items={items}>{children}</MobileNav>}
     </div>
-  )
+  );
 }

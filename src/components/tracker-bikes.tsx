@@ -1,6 +1,7 @@
 // Tremor Raw Tracker [v0.1.1]
 'use client'
 
+// FIXME: you're importing from React in other files, so keep this pattern the same and import { forwardRef } from "react"
 import React from "react"
 import * as HoverCardPrimitives from "@radix-ui/react-hover-card"
 
@@ -83,6 +84,7 @@ const Tracker = React.forwardRef<HTMLDivElement, TrackerProps>(
     return (
       <div
         ref={forwardedRef}
+        // FIXME: items-center
         className={cn("items-cente group flex h-8 w-full", className)}
         {...props}
       >

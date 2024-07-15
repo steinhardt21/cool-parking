@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Shell } from "@/components/shell";
 import imagesDemo from "@/assets/images.json";
 import { Link } from "next-view-transitions";
-
+ 
 export default function ParkingsGalleryPage() {
   return (
     <Shell>
